@@ -36,9 +36,15 @@ data = [Student(1134, 'Ram', 100),
 
 x=var('x')
 y=var('y')
+a=var('a')
+b=var('b')
+c=var('c')
+print("Statement 1 : a,b,c Statement 2: x,b,c")
+print unify((a,b,c), (x,b,c))
 rollno, name, marks = var('rollno'), var('name'), var('marks')
 print("Statement 1 : 1,x,3  Statement 2: 1,2,y")
 print unify((1,x,3), (1,2,y))
 print("Statement 1 : 1,2,2  Statement 2: x,x,2")
 print unify((1,2,2), (x,x,2))
-#print [unify(Student(rollno, name, 0), acct) for acct in data]
+print("Statement 1 : Ram,Sham,Shiva  Statement 2: Ram,x,Shiva")
+print unify(("Ram","Sham","Shiva"), ("Ram",x,"Shiva"))
